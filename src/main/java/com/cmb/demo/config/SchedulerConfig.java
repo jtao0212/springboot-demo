@@ -27,7 +27,7 @@ public class SchedulerConfig {
     @Autowired
     private KafkaProducer kafkaProducer;
 
-    @Scheduled(cron = "0/30 * * * * ?")
+//    @Scheduled(cron = "0/30 * * * * ?")
     public void scheduler() {
 
         String key = "user";
@@ -50,7 +50,7 @@ public class SchedulerConfig {
             if (i == users.size() - 1) {
                 newTime = user.getTime().toString();
             }
-            kafkaProducer.send(JSON.toJSONString(user));
+            kafkaProducer.send(JSON.toJSONString(user),"user");
         }
         /*保存新游标到redis*/
         if (null != newTime) {

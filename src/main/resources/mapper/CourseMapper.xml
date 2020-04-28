@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD com.example.Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cmb.demo.mapper.CourseMapper">
+
+    <select id="getCourseByTime" parameterType="String" resultType="course">
+        SELECT COURSE_ID, STUDENT_ID, COURSE_NAME, TEACHER, MARK, LAST_MODIFIED_TIME FROM T_COURSE
+--         SELECT TEACHER, MARK FROM T_COURSE
+        WHERE 1 = 1
+        <if test="courseTime != null and courseTime != ''">
+            AND LAST_MODIFIED_TIME > #{courseTime}
+        </if>
+        ORDER BY LAST_MODIFIED_TIME ASC
+        LIMIT 0,10
+    </select>
+
+</mapper>

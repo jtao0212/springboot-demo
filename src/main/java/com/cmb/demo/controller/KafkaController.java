@@ -14,6 +14,6 @@ public class KafkaController {
 
     @RequestMapping("/kafkaSend")
     public void kafkaSend() {
-        kafkaProducer.send("111");
+        kafkaProducer.send("111","user");
     }
 }

@@ -4,9 +4,9 @@ server:
 spring:
   #mysql数据源配置
   datasource:
-    #url: jdbc:mysql://jtao0212.mysql.zhangbei.rds.aliyuncs.com:3306/jiantao??useUnicode=true&amp;characterEncoding=UTF-8
-    #username: taojian
-    #password: Tj6472899
+    #    url: jdbc:mysql://jtao0212.mysql.zhangbei.rds.aliyuncs.com:3306/jiantao??useUnicode=true&amp;characterEncoding=UTF-8
+    #    username: taojian
+    #    password: Tj6472899
     url: jdbc:mysql://localhost:3306/jiantao??useUnicode=true&amp;characterEncoding=UTF-8
     username: root
     password: taojian
@@ -19,7 +19,7 @@ spring:
     timeout: 1000
 
   kafka:
-    bootstrap-servers: 39.100。198.185:9092
+    bootstrap-servers: 127.0.0.1:9092
     producer:
       # 发生错误后，消息重发的次数。
       retries: 0
@@ -56,8 +56,16 @@ spring:
       ack-mode: manual_immediate
       missing-topics-fatal: false
 
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/school
+
+elasticsearch:
+  cluster-name: user
+  cluster-nodes: 127.0.0.1:9200
+
 #mybatis配置
 mybatis:
   typeAliasesPackage: com.cmb.demo
   mapperLocations: classpath:mapper/*.xml
-  #configLocation: classpath:/mybatis-config.xml
+  configLocation: classpath:mybatis-config.xml
