@@ -1,6 +1,8 @@
 package com.cmb.demo.bean;
 
 
+import com.cmb.demo.utils.DateUtil;
+
 import java.io.Serializable;
 import java.sql.Timestamp;
 
@@ -16,6 +18,7 @@ public class Course implements Serializable {
     private double mark;
 
     private Timestamp lastModifiedTime;
+
 
     public String getCourseId() {
         return courseId;

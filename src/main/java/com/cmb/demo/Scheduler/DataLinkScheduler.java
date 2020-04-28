@@ -60,7 +60,7 @@ public class DataLinkScheduler {
             if (i == courses.size() - 1) {
                 newCourseTime = course.getLastModifiedTime().toString();
             }
-            kafkaProducer.send(JSON.toJSONString(course), "course");
+            kafkaProducer.send(JSON.toJSONString(course), "course1");
         }
         /*保存新游标到redis*/
         if (null != newCourseTime) {
@@ -73,7 +73,7 @@ public class DataLinkScheduler {
             if (i == students.size() - 1) {
                 newStudentTime = student.getLastModifiedTime().toString();
             }
-            kafkaProducer.send(JSON.toJSONString(student), "student");
+            kafkaProducer.send(JSON.toJSONString(student), "student1");
         }
         /*保存新游标到redis*/
         if (null != newStudentTime) {

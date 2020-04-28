@@ -56,7 +56,5 @@ public class SchedulerConfig {
         if (null != newTime) {
             redisUtil.set(key, newTime);
         }
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-        System.out.println(sdf.format(new Date()) + "SchedulerConfig.scheduler");
     }
 }

@@ -1,5 +1,6 @@
 package com.cmb.demo.bean;
 
+
 import java.io.Serializable;
 import java.sql.Timestamp;
 
@@ -14,6 +15,7 @@ public class Student implements Serializable {
     private String familyAddress;
 
     private Timestamp lastModifiedTime;
+
 
     public String getStudentId() {
         return studentId;
@@ -54,6 +56,7 @@ public class Student implements Serializable {
     public void setLastModifiedTime(Timestamp lastModifiedTime) {
         this.lastModifiedTime = lastModifiedTime;
     }
+
 
     @Override
     public String toString() {
